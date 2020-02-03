@@ -6,25 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-class HelloServlet {
+class HelloApi {
     private static final String REQ_PARAM_NAME = "name";
     private static final String REQ_PARAM_LANG = "lang";
-    private final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
+    private final Logger logger = LoggerFactory.getLogger(HelloApi.class);
 
     private HelloService service;
 
     @Autowired
-    HelloServlet(HelloService service) {
+    HelloApi(HelloService service) {
         this.service = service;
     }
 
